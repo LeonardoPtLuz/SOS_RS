@@ -6,6 +6,7 @@ from rest_framework import mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from sos_rs_app import serializers
 
 #==================================={V1}=============================================
 # class UsersAPIView(APIView):
@@ -28,3 +29,5 @@ class UserAPIView(generics.RetrieveDestroyAPIView):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    # def get_serializer_class(self):
+    #     return serializers.UserSerializer
